@@ -3,6 +3,7 @@ _vimrc_local.vim
 .sass-cache
 
 app
+data
 images
 backgrounds.*
 casperjs.png

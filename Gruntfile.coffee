@@ -9,6 +9,13 @@ module.exports = (grunt) ->
                     sourceMap: true
                 files:
                     'app/javascripts/xwing.js': ['coffeescripts/*.coffee']
+            rawdata:
+                options:
+                    bare: true
+                    join: true
+                    runtime: 'node'
+                files:
+                    'data/xwing.js': ['coffeescripts/cards-*.coffee']
         sass:
             compile:
                 expand: true
@@ -71,4 +78,8 @@ module.exports = (grunt) ->
 
     grunt.registerTask 'gh_pages', [
         'copy:gh_pages'
+    ]
+
+    grunt.registerTask 'rawdata', [
+        'coffee:rawdata'
     ]
